@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "wrangler d1 migrations apply DB --local --config wrangler.local.jsonc && wrangler dev --config wrangler.local.jsonc",
     "test": "node --test tests/*.test.js",
-    "deploy": "wrangler d1 migrations apply DB --remote && wrangler deploy",
+    "deploy": "wrangler deploy && wrangler d1 migrations apply DB --remote",
     "db:migrations:apply": "wrangler d1 migrations apply DB --remote"
   },
   "devDependencies": {

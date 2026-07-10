@@ -59,7 +59,7 @@ npx wrangler login
 npm run deploy
 ```
 
-`npm run deploy` 会先执行 `wrangler d1 migrations apply DB --remote`，然后发布 Worker。
+`npm run deploy` 会先发布 Worker 并自动配置 D1，然后执行远程数据库迁移。
 
 ## 数据备份
 
