@@ -33,6 +33,22 @@ function randomToken(bytes = 18) {
   return btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
 }
 
+async function createLoginToken(env) {
+  return encryptText(`${Date.now()}:${randomToken()}`, env.SESSION_SECRET);
+}
+
+async function verifyLoginToken(token, env, now = Date.now()) {
+  try {
+    const value = await decryptText(String(token || ""), env.SESSION_SECRET);
+    const separator = value.indexOf(":");
+    const issuedAt = Number(value.slice(0, separator));
+    const nonce = value.slice(separator + 1);
+    return separator > 0 && Number.isFinite(issuedAt) && nonce.length >= 16 && issuedAt <= now + 60_000 && now - issuedAt <= 600_000;
+  } catch {
+    return false;
+  }
+}
+
 function response(body, status = 200, headers = {}) {
   const result = new Response(body, { status, headers });
   result.headers.set("Content-Type", "text/html; charset=utf-8");
@@ -157,13 +173,12 @@ async function handle(request, env) {
   if (path === "/login") {
     if (method === "GET") {
       if (await sessionFor(request, env)) return redirect("/admin");
-      const csrf = randomToken();
-      return response(await loginPage(url, csrf), 200, { "Set-Cookie": `totp_login_csrf=${csrf}; Path=/login; HttpOnly${secureCookie}; SameSite=Lax; Max-Age=600` });
+      return response(await loginPage(url, await createLoginToken(env)));
     }
     if (method === "POST") {
       const form = await request.formData();
-      if (!form.get("csrf") || form.get("csrf") !== cookieValue(request, "totp_login_csrf")) return response(await loginPage(url, randomToken(), "页面已过期，请刷新后重试"), 403);
-      if (!constantTimeEqual(form.get("username"), "admin") || !constantTimeEqual(form.get("password"), env.ADMIN_PASSWORD)) return response(await loginPage(url, form.get("csrf"), "账号或密码不正确"), 401);
+      if (!await verifyLoginToken(form.get("csrf"), env)) return response(await loginPage(url, await createLoginToken(env), "页面已过期，请刷新后重试"), 403);
+      if (!constantTimeEqual(form.get("username"), "admin") || !constantTimeEqual(form.get("password"), env.ADMIN_PASSWORD)) return response(await loginPage(url, await createLoginToken(env), "账号或密码不正确"), 401);
       const csrf = randomToken();
       const signed = await createSession(env.SESSION_SECRET, csrf);
       return redirect("/admin", { "Set-Cookie": `${COOKIE}=${encodeURIComponent(signed)}; Path=/; HttpOnly${secureCookie}; SameSite=Lax; Max-Age=43200` });
