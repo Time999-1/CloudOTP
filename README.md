@@ -8,11 +8,11 @@
 
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/Time999-1/CloudOTP)
 
-点击按钮后，Cloudflare 会自动：
+点击按钮后，Cloudflare 会引导你：
 
 1. 复制仓库并创建 Worker。
 2. 创建并绑定 D1 数据库。
-3. 执行数据库迁移。
+3. 配置三个必需的加密参数。
 4. 构建并发布应用。
 
 部署表单会要求配置三个敏感值：
@@ -23,6 +23,8 @@
 
 部署完成后访问 Cloudflare 提供的 `workers.dev` 地址，管理员账号固定为 `admin`。
 
+首次部署后请访问 `/health` 检查 Worker。若登录页提示数据表不存在，请在仓库的 Cloudflare 构建命令中加入 `npx wrangler d1 migrations apply DB --remote`，或在本地登录 Wrangler 后运行 `npm run db:migrations:apply`。Cloudflare 部署界面的自动迁移行为可能随项目导入方式变化，因此不要在未验证数据表前直接录入正式密钥。
+
 ## 功能
 
 - 管理员登录与 CSRF 防护
@@ -31,7 +33,7 @@
 - 每个会员独立、可停用、可重置的分享链接
 - 名称、编号、账号搜索与分类筛选
 - 分享页访问日志
-- 响应式深色/浅色界面
+- 响应式日间、夜间与跟随系统界面
 - Web Crypto AES-GCM 加密保存 TOTP 密钥
 - Cloudflare Workers + D1，无需服务器或容器
 

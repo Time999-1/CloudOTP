@@ -103,12 +103,16 @@ const CSS = `
 .main{max-width:1480px;width:100%;margin:0 auto}.form-row{align-items:start}.compact-card{align-self:start}.account-form{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}.account-form .wide{grid-column:1/-1}.account-form button{justify-self:start;margin-top:14px}.form-card textarea{min-height:64px}.table-card{margin-top:0}.table-wrap table{min-width:760px}.edit-btn{min-width:72px}@media(max-width:900px){.form-row{grid-template-columns:1fr}.account-form{grid-template-columns:1fr}}@media(max-width:640px){.main{max-width:430px}.topbar{grid-template-columns:1fr 42px}.topbar:before{content:none}.title{grid-column:1;text-align:left}.actions{grid-column:2}.actions .primary{display:none}.account-form{display:block}tr.member{grid-template-columns:52px minmax(0,1fr);gap:12px}tr.member td[data-label='操作']{display:block;grid-column:1/3;grid-row:auto}.edit-btn{width:100%;min-height:40px}.icon-btn{width:38px;height:38px}tr.member td[data-label='分享链接']{grid-column:1/3}.link-actions{grid-template-columns:1fr 1fr}.form-row{margin-bottom:14px}.form-card textarea{min-height:80px}}
 `;
 
+const LIGHT_CSS = `body.light{color-scheme:light;--background:#f8fafc;--foreground:#0f172a;--card:#fff;--card-foreground:#0f172a;--muted:#f1f5f9;--muted-foreground:#64748b;--border:#e2e8f0;--input:#cbd5e1;--primary:#0f172a;--primary-foreground:#fff;--secondary:#f8fafc;--secondary-foreground:#0f172a;--accent:#f1f5f9;--accent-foreground:#0f172a;--ring:#94a3b8;--shadow:0 1px 2px rgba(15,23,42,.05)}body.light,body.light .app-shell,body.light .main{background:var(--background);color:var(--foreground)}body.light .top,body.light .sidebar,body.light .card,body.light input,body.light select,body.light textarea,body.light .btn,body.light button{background:var(--card);color:var(--foreground);border-color:var(--border)}body.light th{background:#fbfdff}body.light tr:hover{background:#fafafa}`;
+
 function layout(title, content, session = null) {
-  return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)} · TOTP 看板</title><style>${CSS}</style></head><body>
+  return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)} · TOTP 看板</title><style>${CSS}${LIGHT_CSS}</style></head><body>
   ${session ? "" : `<header class="top"><div class="shell"><a class="brand" href="/">CloudOTP</a></div></header>`}
   ${content}<script>
-function toggleTheme(){document.body.classList.toggle('dark');try{localStorage.setItem('cloudotp-theme',document.body.classList.contains('dark')?'dark':'light')}catch{}}
-try{if(localStorage.getItem('cloudotp-theme')==='dark')document.body.classList.add('dark')}catch{}
+const themeModes=['system','light','dark'];
+function applyTheme(mode){document.body.classList.toggle('light',mode==='light');document.body.classList.toggle('dark',mode==='dark');document.querySelectorAll('[data-theme-toggle]').forEach(btn=>{btn.textContent=mode==='system'?'◐':mode==='light'?'☀':'☾';btn.title=mode==='system'?'主题：跟随系统':mode==='light'?'主题：日间模式':'主题：夜间模式';btn.setAttribute('aria-label',btn.title)})}
+function toggleTheme(){let mode='system';try{mode=localStorage.getItem('cloudotp-theme')||'system'}catch{}const next=themeModes[(themeModes.indexOf(mode)+1)%themeModes.length];try{localStorage.setItem('cloudotp-theme',next)}catch{}applyTheme(next)}
+let savedTheme='system';try{savedTheme=localStorage.getItem('cloudotp-theme')||'system'}catch{}applyTheme(themeModes.includes(savedTheme)?savedTheme:'system');
 document.addEventListener('click',e=>{const btn=e.target.closest('[data-theme-toggle]');if(btn)toggleTheme()});
 </script></body></html>`;
 }
