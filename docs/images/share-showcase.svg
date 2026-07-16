@@ -1,28 +1,24 @@
 <svg width="1600" height="860" viewBox="0 0 1600 860" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">CloudOTP 分享验证码页预览</title>
-  <desc id="desc">新版分享页，展示验证码、轻量倒计时圆环和复制按钮。</desc>
+  <desc id="desc">极简分享页，白底大验证码、清晰倒计时和复制按钮。</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="860"><stop stop-color="#F8FAFC"/><stop offset="1" stop-color="#EEF2FF"/></linearGradient>
-    <linearGradient id="p" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7C5CFF"/><stop offset="1" stop-color="#4F46E5"/></linearGradient>
-    <filter id="s"><feDropShadow dx="0" dy="32" stdDeviation="38" flood-color="#0F172A" flood-opacity=".14"/></filter>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="860"><stop stop-color="#F8FAFC"/><stop offset="1" stop-color="#EEF2F7"/></linearGradient>
+    <filter id="s"><feDropShadow dx="0" dy="22" stdDeviation="30" flood-color="#0F172A" flood-opacity=".10"/></filter>
   </defs>
   <rect width="1600" height="860" fill="url(#bg)"/>
-  <rect x="470" y="150" width="660" height="560" rx="48" fill="#fff" opacity=".72"/>
-  <g filter="url(#s)">
-    <rect x="620" y="178" width="360" height="500" rx="34" fill="#111827"/>
-    <rect x="746" y="212" width="108" height="28" rx="14" fill="#052E16"/>
-    <text x="770" y="232" fill="#86EFAC" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="900">链接有效</text>
-    <text x="735" y="306" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="900">OpenAI</text>
-    <text x="767" y="350" fill="#A7B3C6" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="800">编号 003</text>
-    <rect x="680" y="382" width="240" height="48" rx="18" fill="#0B1220"/>
-    <text x="716" y="414" fill="#F8FAFC" font-family="SFMono-Regular, Menlo, monospace" font-size="28" font-weight="900" letter-spacing="8">638537</text>
-    <circle cx="800" cy="505" r="55" fill="#263244"/>
-    <path d="M800 450a55 55 0 1 1-37 96" stroke="#34D399" stroke-width="10" stroke-linecap="round"/>
-    <circle cx="800" cy="505" r="43" fill="#111827"/>
-    <text x="782" y="505" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="950">17</text>
-    <text x="793" y="532" fill="#A7B3C6" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="900">秒</text>
-    <text x="713" y="594" fill="#A7B3C6" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800">验证码每 30 秒自动更新</text>
-    <rect x="680" y="630" width="240" height="48" rx="24" fill="url(#p)"/>
-    <text x="756" y="661" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="900">复制验证码</text>
+  <g filter="url(#s)" font-family="Inter, Arial, sans-serif">
+    <rect x="470" y="70" width="660" height="720" rx="34" fill="#fff" stroke="#E2E8F0"/>
+    <rect x="708" y="110" width="184" height="42" rx="21" fill="#DCFCE7"/>
+    <text x="744" y="138" fill="#047857" font-size="18" font-weight="950">✓ 链接有效</text>
+    <text x="594" y="245" fill="#0F172A" font-size="64" font-weight="950">亚马逊 TV 会员</text>
+    <text x="744" y="302" fill="#667085" font-size="30" font-weight="850">编号 001</text>
+    <rect x="532" y="370" width="536" height="150" rx="24" fill="#F8FAFC" stroke="#DBE3EE"/>
+    <text x="620" y="465" fill="#0F172A" font-family="SFMono-Regular, Menlo, monospace" font-size="78" font-weight="950" letter-spacing="14">378 278</text>
+    <circle cx="800" cy="635" r="82" fill="#E6EAF0"/>
+    <path d="M800 553a82 82 0 0 1 56 22" stroke="#079455" stroke-width="18"/>
+    <circle cx="800" cy="635" r="62" fill="#fff"/>
+    <text x="774" y="654" fill="#0F172A" font-size="56" font-weight="950">3</text>
+    <text x="824" y="654" fill="#0F172A" font-size="22" font-weight="900">秒</text>
+    <text x="682" y="754" fill="#667085" font-size="24" font-weight="850">验证码每30秒自动更新</text>
   </g>
 </svg>
