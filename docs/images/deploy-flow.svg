@@ -1,61 +1,35 @@
 <svg width="1280" height="420" viewBox="0 0 1280 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">CloudOTP 一键部署流程</title>
-  <desc id="desc">从点击 Deploy 按钮到登录后台的 Cloudflare Workers 部署流程图</desc>
+  <title id="title">CloudOTP 快速部署流程</title>
+  <desc id="desc">CloudOTP 从一键部署到登录使用的简化流程。</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="420" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#FBFAFF"/>
-      <stop offset="0.52" stop-color="#F3F0FF"/>
-      <stop offset="1" stop-color="#F8FAFC"/>
-    </linearGradient>
-    <linearGradient id="primary" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#8B5CF6"/>
-      <stop offset="1" stop-color="#4F46E5"/>
-    </linearGradient>
-    <filter id="shadow" x="-20%" y="-30%" width="140%" height="170%" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#4F46E5" flood-opacity="0.12"/>
-    </filter>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="420"><stop stop-color="#F8FAFC"/><stop offset="1" stop-color="#EEF2FF"/></linearGradient>
+    <linearGradient id="p" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7C5CFF"/><stop offset="1" stop-color="#4F46E5"/></linearGradient>
+    <filter id="s"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#0F172A" flood-opacity=".10"/></filter>
   </defs>
-  <rect width="1280" height="420" rx="42" fill="url(#bg)"/>
-  <circle cx="1060" cy="80" r="150" fill="#DDD6FE" opacity="0.35"/>
-  <circle cx="260" cy="350" r="190" fill="#EDE9FE" opacity="0.55"/>
-  <text x="72" y="82" fill="#0F172A" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800">CloudOTP 部署流程</text>
-  <text x="72" y="120" fill="#64748B" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="500">从 GitHub 一键部署到 Cloudflare Workers，只需要配置密码和加密密钥。</text>
-
-  <g transform="translate(72 178)">
-    <rect width="200" height="132" rx="28" fill="white" stroke="#E2E8F0" filter="url(#shadow)"/>
-    <circle cx="42" cy="42" r="20" fill="url(#primary)"/>
-    <text x="36" y="49" fill="white" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800">1</text>
-    <text x="28" y="82" fill="#0F172A" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800">点击部署</text>
-    <text x="28" y="110" fill="#64748B" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600">Deploy to Cloudflare</text>
-  </g>
-  <path d="M295 244H360" stroke="#A78BFA" stroke-width="4" stroke-linecap="round"/>
-  <path d="M350 234L362 244L350 254" stroke="#A78BFA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-
-  <g transform="translate(382 178)">
-    <rect width="200" height="132" rx="28" fill="white" stroke="#E2E8F0" filter="url(#shadow)"/>
-    <circle cx="42" cy="42" r="20" fill="url(#primary)"/>
-    <text x="36" y="49" fill="white" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800">2</text>
-    <text x="28" y="82" fill="#0F172A" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800">填写变量</text>
-    <text x="28" y="110" fill="#64748B" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600">密码 / 会话 / 加密密钥</text>
-  </g>
-  <path d="M605 244H670" stroke="#A78BFA" stroke-width="4" stroke-linecap="round"/>
-  <path d="M660 234L672 244L660 254" stroke="#A78BFA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-
-  <g transform="translate(692 178)">
-    <rect width="200" height="132" rx="28" fill="white" stroke="#E2E8F0" filter="url(#shadow)"/>
-    <circle cx="42" cy="42" r="20" fill="url(#primary)"/>
-    <text x="36" y="49" fill="white" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800">3</text>
-    <text x="28" y="82" fill="#0F172A" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800">等待构建</text>
-    <text x="28" y="110" fill="#64748B" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600">Workers + D1 自动发布</text>
-  </g>
-  <path d="M915 244H980" stroke="#A78BFA" stroke-width="4" stroke-linecap="round"/>
-  <path d="M970 234L982 244L970 254" stroke="#A78BFA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-
-  <g transform="translate(1002 178)">
-    <rect width="200" height="132" rx="28" fill="white" stroke="#E2E8F0" filter="url(#shadow)"/>
-    <circle cx="42" cy="42" r="20" fill="url(#primary)"/>
-    <text x="36" y="49" fill="white" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800">4</text>
-    <text x="28" y="82" fill="#0F172A" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800">登录后台</text>
-    <text x="28" y="110" fill="#64748B" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600">admin / ADMIN_PASSWORD</text>
+  <rect width="1280" height="420" rx="36" fill="url(#bg)"/>
+  <text x="80" y="86" fill="#0F172A" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="900">5 分钟部署 CloudOTP</text>
+  <text x="80" y="124" fill="#64748B" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">一键导入仓库，绑定 D1，配置 3 个密钥，然后登录后台。</text>
+  <g filter="url(#s)" font-family="Inter, Arial, sans-serif">
+    <rect x="80" y="190" width="210" height="118" rx="24" fill="#fff"/>
+    <circle cx="124" cy="232" r="22" fill="url(#p)"/><text x="118" y="240" fill="#fff" font-size="22" font-weight="900">1</text>
+    <text x="158" y="228" fill="#0F172A" font-size="20" font-weight="900">Deploy</text>
+    <text x="158" y="260" fill="#64748B" font-size="15" font-weight="700">点击按钮导入</text>
+    <path d="M314 249h92" stroke="#CBD5E1" stroke-width="6" stroke-linecap="round"/>
+    <path d="m396 232 22 17-22 17" stroke="#CBD5E1" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="430" y="190" width="210" height="118" rx="24" fill="#fff"/>
+    <circle cx="474" cy="232" r="22" fill="url(#p)"/><text x="468" y="240" fill="#fff" font-size="22" font-weight="900">2</text>
+    <text x="508" y="228" fill="#0F172A" font-size="20" font-weight="900">D1 数据库</text>
+    <text x="508" y="260" fill="#64748B" font-size="15" font-weight="700">绑定名使用 DB</text>
+    <path d="M664 249h92" stroke="#CBD5E1" stroke-width="6" stroke-linecap="round"/>
+    <path d="m746 232 22 17-22 17" stroke="#CBD5E1" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="780" y="190" width="210" height="118" rx="24" fill="#fff"/>
+    <circle cx="824" cy="232" r="22" fill="url(#p)"/><text x="818" y="240" fill="#fff" font-size="22" font-weight="900">3</text>
+    <text x="858" y="228" fill="#0F172A" font-size="20" font-weight="900">Secrets</text>
+    <text x="858" y="260" fill="#64748B" font-size="15" font-weight="700">填写 3 个变量</text>
+    <path d="M1014 249h92" stroke="#CBD5E1" stroke-width="6" stroke-linecap="round"/>
+    <path d="m1096 232 22 17-22 17" stroke="#CBD5E1" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="1130" y="190" width="110" height="118" rx="24" fill="#0F172A"/>
+    <text x="1163" y="238" fill="#fff" font-size="20" font-weight="900">登录</text>
+    <text x="1154" y="268" fill="#A7B3C6" font-size="14" font-weight="700">admin</text>
   </g>
 </svg>

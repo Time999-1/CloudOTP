@@ -1,30 +1,28 @@
 <svg width="1600" height="860" viewBox="0 0 1600 860" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">CloudOTP 分享验证码页高清预览</title>
-  <desc id="desc">分享页面展示账号名称、当前 TOTP 验证码、倒计时和复制按钮。</desc>
+  <title id="title">CloudOTP 分享验证码页预览</title>
+  <desc id="desc">新版分享页，展示验证码、轻量倒计时圆环和复制按钮。</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="860"><stop stop-color="#FFFFFF"/><stop offset="0.55" stop-color="#F6F3FF"/><stop offset="1" stop-color="#F8FAFC"/></linearGradient>
-    <linearGradient id="primary" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8B5CF6"/><stop offset="1" stop-color="#4F46E5"/></linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="35" stdDeviation="42" flood-color="#4F46E5" flood-opacity="0.14"/></filter>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="860"><stop stop-color="#F8FAFC"/><stop offset="1" stop-color="#EEF2FF"/></linearGradient>
+    <linearGradient id="p" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7C5CFF"/><stop offset="1" stop-color="#4F46E5"/></linearGradient>
+    <filter id="s"><feDropShadow dx="0" dy="32" stdDeviation="38" flood-color="#0F172A" flood-opacity=".14"/></filter>
   </defs>
   <rect width="1600" height="860" fill="url(#bg)"/>
-  <circle cx="1180" cy="150" r="250" fill="#EDE9FE" opacity="0.8"/>
-  <circle cx="420" cy="650" r="300" fill="#E0E7FF" opacity="0.5"/>
-  <g filter="url(#shadow)">
-    <rect x="445" y="126" width="710" height="608" rx="52" fill="white" stroke="#E2E8F0"/>
-    <rect x="508" y="188" width="584" height="118" rx="34" fill="#FAFBFF" stroke="#E2E8F0"/>
-    <rect x="542" y="222" width="54" height="54" rx="18" fill="url(#primary)"/>
-    <path d="M569 235L583 241V254C583 266 575 273 569 276C563 273 555 266 555 254V241L569 235Z" stroke="white" stroke-width="3" stroke-linejoin="round"/>
-    <text x="620" y="242" fill="#0F172A" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="900">OpenAI</text>
-    <text x="620" y="274" fill="#64748B" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="650">AmMason001@outlook.com</text>
-    <rect x="928" y="226" width="96" height="34" rx="17" fill="#DCFCE7"/>
-    <text x="976" y="249" text-anchor="middle" fill="#16A34A" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="900">分享启用</text>
-    <text x="800" y="408" text-anchor="middle" fill="#64748B" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="850">当前验证码</text>
-    <text x="800" y="500" text-anchor="middle" fill="#0F172A" font-family="Inter, Arial, sans-serif" font-size="86" font-weight="950" letter-spacing="14">754888</text>
-    <circle cx="800" cy="594" r="50" stroke="#DCFCE7" stroke-width="10"/>
-    <path d="M800 544A50 50 0 0 1 846 613" stroke="#16A34A" stroke-width="10" stroke-linecap="round"/>
-    <text x="800" y="603" text-anchor="middle" fill="#0F172A" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="900">28秒</text>
-    <rect x="618" y="662" width="364" height="58" rx="29" fill="url(#primary)"/>
-    <text x="800" y="699" text-anchor="middle" fill="white" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="900">复制验证码</text>
+  <rect x="470" y="150" width="660" height="560" rx="48" fill="#fff" opacity=".72"/>
+  <g filter="url(#s)">
+    <rect x="620" y="178" width="360" height="500" rx="34" fill="#111827"/>
+    <rect x="746" y="212" width="108" height="28" rx="14" fill="#052E16"/>
+    <text x="770" y="232" fill="#86EFAC" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="900">链接有效</text>
+    <text x="735" y="306" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="900">OpenAI</text>
+    <text x="767" y="350" fill="#A7B3C6" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="800">编号 003</text>
+    <rect x="680" y="382" width="240" height="48" rx="18" fill="#0B1220"/>
+    <text x="716" y="414" fill="#F8FAFC" font-family="SFMono-Regular, Menlo, monospace" font-size="28" font-weight="900" letter-spacing="8">638537</text>
+    <circle cx="800" cy="505" r="55" fill="#263244"/>
+    <path d="M800 450a55 55 0 1 1-37 96" stroke="#34D399" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="800" cy="505" r="43" fill="#111827"/>
+    <text x="782" y="505" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="950">17</text>
+    <text x="793" y="532" fill="#A7B3C6" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="900">秒</text>
+    <text x="713" y="594" fill="#A7B3C6" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800">验证码每 30 秒自动更新</text>
+    <rect x="680" y="630" width="240" height="48" rx="24" fill="url(#p)"/>
+    <text x="756" y="661" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="900">复制验证码</text>
   </g>
-  <text x="800" y="794" text-anchor="middle" fill="#64748B" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="650">验证码每 30 秒自动刷新，分享链接可由管理员随时停用或重置。</text>
 </svg>
